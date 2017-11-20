@@ -5,3 +5,34 @@
   <input type="text" name="genre" placeholder="Genre:" id="song_genre">
   <input type="submit" value="Submit">
 </form>
+
+<h1>Create a new song</h1>
+
+<form action="/songs" method="POST">
+  <label>Name:</label>
+
+  <br></br>
+
+  <input type="text" name="song_name" id="pet_name">
+
+  <br></br>
+
+  <label>Choose an existing genre:</label>
+
+  <br></br>
+
+  <% Genre.all.each do |genre| %>
+    <input id="<%= genre.name %>" type="checkbox" name="genres[]" value="<%= genre.id %>">
+  <% end %>
+
+  <br></br>
+
+  <label>Create a new artist:</label>
+
+  <br></br>
+
+  <label>Name:</label>
+      <input  type="text" name="artist_name"></input>
+  <br></br>
+  <input type="submit" value="Submit ">
+</form>
